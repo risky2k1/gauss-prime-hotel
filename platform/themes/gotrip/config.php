@@ -43,11 +43,11 @@ return [
             // });
 
             // You may use this event to set up your assets.
-            $theme->asset()->usePath()->add('style', 'css/style.css');
+            $theme->asset()->usePath()->add('vendors', 'css/vendors.css');
+            $theme->asset()->usePath()->add('main', 'css/main.css');
 
-            $theme->asset()->container('footer')->add('jquery', 'libraries/jquery.min.js');
-
-            $theme->asset()->container('footer')->usePath()->add('script', 'js/script.js');
+            $theme->asset()->container('footer')->usePath()->add('vendors-js', 'js/vendors.js');
+            $theme->asset()->container('footer')->usePath()->add('main-js', 'js/main.js');
 
             if (function_exists('shortcode')) {
                 $theme->composer(['page', 'post'], function (\Botble\Shortcode\View\View $view) {
