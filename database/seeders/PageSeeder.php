@@ -21,12 +21,16 @@ class PageSeeder extends BaseSeeder
             [
                 'name' => 'Homepage',
                 'content' =>
-                    Html::tag('div', '[featured-posts][/featured-posts]') .
-                    Html::tag('div', '[recent-posts title="What\'s new?"][/recent-posts]') .
-                    Html::tag('div', '[featured-categories-posts title="Best for you" category_id="' . Category::query()->skip(1)->value('id') . '" enable_lazy_loading="yes"][/featured-categories-posts]') .
-                    Html::tag('div', '[all-galleries limit="8" title="Galleries" enable_lazy_loading="yes"][/all-galleries]')
+                    Html::tag('div', '[banner][/banner]') .
+                    Html::tag('div', '[popular-destination][/popular-destination]') .
+                    Html::tag('div', '[cta-card][/cta-card]') .
+                    Html::tag('div', '[recommend][/recommend]') .
+                    Html::tag('div', '[features][/features]') .
+                    Html::tag('div', '[testimonials][/testimonials]') .
+                    Html::tag('div', '[blog-card][/blog-card]') .
+                    Html::tag('div', '[filter-destination][/filter-destination]') .
+                    Html::tag('div', '[newsletter][/newsletter]')
                 ,
-                'template' => 'no-sidebar',
             ],
             [
                 'name' => 'Blog',
