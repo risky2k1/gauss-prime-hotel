@@ -18,6 +18,7 @@ use Botble\Setting\Forms\GeneralSettingForm;
 use Botble\Table\CollectionDataTable;
 use Botble\Table\EloquentDataTable;
 use Botble\Theme\Events\RenderingThemeOptionSettings;
+use Botble\Theme\Facades\Theme;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
@@ -434,7 +435,13 @@ class HookServiceProvider extends ServiceProvider
 
     public function languageSwitcher(string $switcher, array $options = []): string
     {
-        return view('plugins/language::partials.switcher', compact('options'))->render();
+        $view = 'plugins/language::partials.switcher';
+
+        if ($theme = Theme::getThemeNamespace('partials.switcher')) {
+            $view = $theme;
+        }
+
+        return view($view, compact('options'))->render();
     }
 
     public function checkItemLanguageBeforeShow(Builder|Model $data): Builder|Model
