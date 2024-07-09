@@ -37,8 +37,20 @@ class MenuSeeder extends BaseSeeder
                         'reference_type' => Page::class,
                     ],
                     [
-                        'title' => 'Galleries',
-                        'reference_id' => $this->getPageId('Galleries'),
+                        'title' => 'Contact',
+                        'reference_id' => $this->getPageId('Contact'),
+                        'reference_type' => Page::class,
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Footer pages menu',
+                'slug' => 'footer-pages-menu',
+                'location' => 'footer-menu',
+                'items' => [
+                    [
+                        'title' => 'Blog',
+                        'reference_id' => $this->getPageId('Blog'),
                         'reference_type' => Page::class,
                     ],
                     [
@@ -48,35 +60,37 @@ class MenuSeeder extends BaseSeeder
                     ],
                 ],
             ],
-
             [
-                'name' => 'Social',
-                'slug' => 'social',
+                'name' => 'Footer support pages menu',
+                'slug' => 'footer-support-pages-menu',
+                'location' => 'footer-menu',
                 'items' => [
                     [
-                        'title' => 'Facebook',
-                        'url' => 'https://facebook.com',
-                        'icon_font' => 'ti ti-brand-facebook',
-                        'target' => '_blank',
+                        'title' => 'Blog',
+                        'reference_id' => $this->getPageId('Blog'),
+                        'reference_type' => Page::class,
                     ],
                     [
-                        'title' => 'Twitter',
-                        'url' => 'https://twitter.com',
-                        'icon_font' => 'ti ti-brand-x',
-                        'target' => '_blank',
+                        'title' => 'Contact',
+                        'reference_id' => $this->getPageId('Contact'),
+                        'reference_type' => Page::class,
+                    ],
+                ],
+            ],
+            [
+                'name' => 'Footer service pages menu',
+                'slug' => 'footer-service-pages-menu',
+                'location' => 'footer-menu',
+                'items' => [
+                    [
+                        'title' => 'Blog',
+                        'reference_id' => $this->getPageId('Blog'),
+                        'reference_type' => Page::class,
                     ],
                     [
-                        'title' => 'GitHub',
-                        'url' => 'https://github.com',
-                        'icon_font' => 'ti ti-brand-github',
-                        'target' => '_blank',
-                    ],
-
-                    [
-                        'title' => 'Linkedin',
-                        'url' => 'https://linkedin.com',
-                        'icon_font' => 'ti ti-brand-linkedin',
-                        'target' => '_blank',
+                        'title' => 'Contact',
+                        'reference_id' => $this->getPageId('Contact'),
+                        'reference_type' => Page::class,
                     ],
                 ],
             ],

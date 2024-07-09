@@ -1,13 +1,26 @@
 <?php
 
-register_page_template([
-    'default' => 'Default',
-]);
+use Botble\Media\Facades\RvMedia;
+use Botble\Theme\Supports\ThemeSupport;
 
-register_sidebar([
-    'id' => 'second_sidebar',
-    'name' => 'Second sidebar',
-    'description' => 'This is a sample sidebar for gotrip theme',
-]);
 
-RvMedia::setUploadPathAndURLToPublic();
+app()->booted(function () {
+    ThemeSupport::registerSocialLinks();
+    ThemeSupport::registerToastNotification();
+    ThemeSupport::registerSiteCopyright();
+    ThemeSupport::registerLazyLoadImages();
+    ThemeSupport::registerDateFormatOption();
+
+    register_page_template([
+        'default' => 'Default',
+    ]);
+
+    register_sidebar([
+        'id' => 'footer_sidebar',
+        'name' => 'Footer sidebar',
+        'description' => 'This is a footer sidebar for gotrip theme',
+    ]);
+
+    RvMedia::setUploadPathAndURLToPublic();
+});
+
